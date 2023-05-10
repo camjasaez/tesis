@@ -1,0 +1,13 @@
+# Ignorar archivos y directorios específicos
+logs/
+*.log
+config.ini
+
+# Ignorar directorios de entornos virtuales de Python
+venv/
+.env/
+
+# Ignorar archivos generados durante la construcción o desarrollo
+node_modules/
+dist/
+build/
