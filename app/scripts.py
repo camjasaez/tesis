@@ -1,12 +1,12 @@
 import subprocess
 
 
-def run_app():
-    subprocess.run("uvicorn main:app --reload", shell=True)
+def run_dev():
+    subprocess.run("docker-compose up -d && docker-compose logs -f", shell=True)
 
 
-def install_dependencies():
-    subprocess.run("pip install -r requirements.txt", shell=True)
+def run_server():
+    subprocess.run("unicorn app.main:app --reload", shell=True)
 
 
 def run_tests():
@@ -14,4 +14,4 @@ def run_tests():
 
 
 if __name__ == "__main__":
-    run_app()
+    run_dev()
