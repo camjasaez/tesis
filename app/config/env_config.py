@@ -17,3 +17,5 @@ ENV_VARIABLES = {
     "MONGO_URL": os.getenv("MONGO_URL"),
 }
 
+print(ENV_VARIABLES)
+

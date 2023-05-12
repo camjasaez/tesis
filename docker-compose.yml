@@ -1,9 +1,9 @@
 version: "3.8"
 services:
-  api:
+  detector-api:
     build:
-      context: ./app
       dockerfile: Dockerfile
+      context: ./app
     ports:
       - 8000:8000
     depends_on:
