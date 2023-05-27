@@ -1,13 +1,11 @@
 from fastapi import FastAPI
-# from config.db_config import connect_db
+from config.db_config import connect_db
 
 
 app = FastAPI()
 
-# if connect_db():
-#     print(" => Conexión exitosa con MongoDB")
-# else:
-#     print(" =X Error al conectar con MongoDB")
+# Conexión a la base de datos
+connect_db()
 
 
 @app.get("/")
