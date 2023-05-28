@@ -1,7 +1,7 @@
 # APi Server
 fastapi
 uvicorn[standard]
-pydantic[email]
+pydantic
 
 # Database
 motor
