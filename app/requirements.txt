@@ -7,4 +7,6 @@ pydantic
 motor
 dnspython
 
+#env
 python-dotenv
+```
