@@ -1,6 +1,6 @@
 # Tesis
 
-###### **🚧 V0.1.0 Beta development.🚧🔨**
+###### **🚧 V0.2.0 Beta development.🚧🔨**
 
 _Sistema de reconocimiento automático de matrículas vehiculares y API para el control de acceso en tiempo real_
 
@@ -12,9 +12,9 @@ _blablabla_
 
 Para poder ejecutar el proyecto se necesita tener instalado:
 
-* [Git](https://git-scm.com/downloads) - Control de versiones
-* [Docker](https://docs.docker.com/get-docker/) - Contenedores de aplicaciones
-* [Docker Compose](https://docs.docker.com/compose/install/) - Orquestador de contenedores
+- [Git](https://git-scm.com/downloads) - Control de versiones
+- [Docker](https://docs.docker.com/get-docker/) - Contenedores de aplicaciones
+- [Docker Compose](https://docs.docker.com/compose/install/) - Orquestador de contenedores
 
 ### Instalación 🔧
 
@@ -28,10 +28,10 @@ docker-compose up
 
 ## Construido con 🛠️
 
-* [Python](https://www.python.org/) - Lenguaje de programación
-* [MongoDB](https://www.mongodb.com/) - Base de datos
-* [FastAPI](https://fastapi.tiangolo.com/) - Framework para API
-* [OpenCV](https://opencv.org/) - Librería de visión artificial
+- [Python](https://www.python.org/) - Lenguaje de programación
+- [MongoDB](https://www.mongodb.com/) - Base de datos
+- [FastAPI](https://fastapi.tiangolo.com/) - Framework para API
+- [OpenCV](https://opencv.org/) - Librería de visión artificial
 
 ## Autores ✒️
 
