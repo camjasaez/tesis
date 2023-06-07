@@ -9,11 +9,11 @@ COPY requirements.txt /app
 # Instala las dependencias
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-# Copia los archivos de tu aplicación al contenedor
+# Copia los archivos de la aplicación al contenedor
 COPY . /app
 
-# Expone el puerto en el que se ejecuta tu aplicación
+# Expone el puerto en el que se ejecuta la aplicación
 EXPOSE 8000
 
-# Ejecuta el comando para iniciar tu aplicación
+# Ejecuta el comando para iniciar la aplicación
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
