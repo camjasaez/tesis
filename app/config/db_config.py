@@ -1,19 +1,14 @@
-from env_config import ENV_VARIABLES
-from pymongo import MongoClient
-
-# conexión a la base de datos
-# Obtiene el valor de la variable de entorno DB_HOST
-MONGO_URL = ENV_VARIABLES["MONGO_URL"]
-MONGO_DB = ENV_VARIABLES["MONGO_DB"]
+from motor.motor_asyncio import AsyncIOMotorClient
+from contextlib import asynccontextmanager
+from config import settings
 
 
-def connect_db():
+@asynccontextmanager
+async def db_client():
+    mongodb_client = AsyncIOMotorClient(settings["DB_URL"])
+    mongodb = mongodb_client[settings["DB_NAME"]]
+
     try:
-        # Crea una instancia del cliente de MongoDB
-        client = MongoClient(MONGO_URL)
-        db = client[MONGO_DB]
-        return db
-
-    except Exception as e:
-        print(e)
-        return None
+        yield mongodb
+    finally:
+        mongodb_client.close()

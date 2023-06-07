@@ -1,4 +1,12 @@
+# APi Server
 fastapi
-pymongo
+uvicorn[standard]
+pydantic
+
+# Database
+motor
+dnspython
+
+#env
 python-dotenv
-uvicorn
+```
