@@ -1,10 +1,8 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from datetime import datetime
-import uuid
 
 
 class Register(BaseModel):
-    id: str = Field(default_factory=uuid.uuid4, alias="_id")
     type: str
     date: datetime
     prediction_accuracy: float
