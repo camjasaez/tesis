@@ -9,4 +9,3 @@ dnspython
 
 #env
 python-dotenv
-```
