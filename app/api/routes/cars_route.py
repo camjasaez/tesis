@@ -34,4 +34,6 @@ async def get_by_license_plate(license_plate: str):
     car = await get_cars_by_license_plate(license_plate)
     if car:
         return success_response(data=car)
+    if car.__len__() == 0:
+        return error_response(status=204, message="No cars")
     return error_response(status=500, message="Something went wrong")
