@@ -44,7 +44,7 @@ def get_settings() -> dict:
     settings.update(get_server_settings())
     settings.update(get_database_settings())
     settings.update(get_allowed_hosts())
-    print(settings)
+    # print(settings)
     return settings
 
 

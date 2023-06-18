@@ -2,7 +2,13 @@ import subprocess
 
 
 def run_dev():
-    subprocess.run("docker-compose up -d && docker-compose logs -f detector-api", shell=True)
+    subprocess.run(
+        "docker-compose up -d && docker-compose logs -f detector-api", shell=True
+    )
+
+
+def docker_down():
+    subprocess.run("docker-compose down", shell=True)
 
 
 def run_server():

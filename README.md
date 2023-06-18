@@ -1,6 +1,6 @@
 # Tesis
 
-###### **🚧 V0.2.0 Beta development.🚧🔨**
+###### **🚧 V0.3.0 Beta development.🚧🔨**
 
 _Sistema de reconocimiento automático de matrículas vehiculares y API para el control de acceso en tiempo real_
 
