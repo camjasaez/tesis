@@ -1,16 +1,15 @@
+# Dockerfile para la api de la aplicación
 # Usa una imagen base de Python
 FROM python:3.9
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-COPY requirements.txt /app
+# Copia los archivos de la aplicación al contenedor
+COPY /app /app
 
 # Instala las dependencias
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
-
-# Copia los archivos de la aplicación al contenedor
-COPY . /app
 
 # Expone el puerto en el que se ejecuta la aplicación
 EXPOSE 8000

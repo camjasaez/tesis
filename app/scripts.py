@@ -11,6 +11,11 @@ def docker_down():
     subprocess.run("docker-compose down", shell=True)
 
 
+def docker_build():
+    "docker build -t detector-api ."
+    "docker run -p 8000:8000 --name detector-api detector-api"
+
+
 def run_server():
     # docker exec -it detector-api bash
     subprocess.run("uvicorn main:app --reload", shell=True)
