@@ -1,6 +1,7 @@
 from config.db_config import db_client
 from utils.serializer import serialize
 from utils.error_handler import console_error_handler
+from bson import ObjectId
 
 db_name = "cars"
 
@@ -17,7 +18,7 @@ async def get_all_cars():
 async def get_car_by_id(id: str):
     async with db_client() as db:
         try:
-            if (car := await db[db_name].find_one({"_id": id})) is not None:
+            if (car := await db[db_name].find_one({"_id": ObjectId(id)})) is not None:
                 return serialize(car)
         except Exception as e:
             console_error_handler(e, __file__, "get_car_by_id")

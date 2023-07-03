@@ -1,8 +1,23 @@
-from pydantic import BaseModel
+from typing import Optional
+from pydantic import BaseModel, Field
+from bson import ObjectId
 from datetime import datetime
 
 
+class PyObjectId(ObjectId):
+    @classmethod
+    def __get_validators__(cls):
+        yield cls.validate
+
+    @classmethod
+    def validate(cls, v):
+        if not ObjectId.is_valid(v):
+            raise ValueError("Invalid ObjectId")
+        return str(v)
+
+
 class Register(BaseModel):
+    id: Optional[PyObjectId] = Field(alias="_id")
     type: str
     date: datetime
     prediction_accuracy: float
@@ -13,7 +28,7 @@ class Register(BaseModel):
     class Config:
         schemma_extra = {
             "example": {
-                "id": "11111213-1415-1617-1819-1a1b1c1d1e1f",
+                "_id": "6486262eaf888e26ad176f41",
                 "type": "entry",
                 "date": "2021-01-01T00:00:00",
                 "prediction_accuracy": 0.9,

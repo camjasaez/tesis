@@ -6,6 +6,7 @@ pydantic
 # Database
 motor
 dnspython
+# bson
 
 #env
 python-dotenv
