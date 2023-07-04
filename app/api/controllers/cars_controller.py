@@ -41,7 +41,8 @@ async def create_car(car: dict):
     async with db_client() as db:
         try:
             result = await db[db_name].insert_one(car)
-            return result.inserted_id
+            created_task = await db[db_name].find_one({"_id": result.inserted_id})
+            return serialize(created_task)
         except Exception as e:
             console_error_handler(e, __file__, "create_car")
 

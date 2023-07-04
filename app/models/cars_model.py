@@ -18,9 +18,12 @@ class PyObjectId(ObjectId):
 class Car(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id")
     license_plate: str
-    is_blocked: bool
+    is_blocked: bool = False
 
     class Config:
+        orm_mode = True
+        allow_population_by_field_name = True
+        json_encoders = {ObjectId: str}
         schema_extra = {
             "example": {
                 "_id": "6480ceeca860668d697482c0",
