@@ -18,7 +18,7 @@ class PyObjectId(ObjectId):
 class Car(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id")
     license_plate: str
-    is_blocked: bool = False
+    is_blocked: Optional[bool] = False
 
     class Config:
         orm_mode = True

@@ -38,10 +38,15 @@ async def get_by_id(id: str):
 @router.post("/", response_description="Create register")
 async def save_register(register: dict):
     register_found = await get_cars_by_license_plate(register["license_plate"])
-    if not register_found:
-        result = await create_car(register["license_plate"])
+    if register_found == []:
+        result = await create_car({"license_plate": register["license_plate"]})
+        id_car = result["_id"]
+        new_register = await create_register(register, id_car)
+        if new_register:
+            return success_response(data=new_register)
+        return error_response(status=500, message="Something went wrong")
 
-    id_car = register_found[0]["_id"] or result["_id"]
+    id_car = register_found[0]["_id"]
 
     new_register = await create_register(register, id_car)
     if new_register:
