@@ -18,12 +18,12 @@ class PyObjectId(ObjectId):
 
 class Register(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id")
-    type: str
-    date: datetime
-    prediction_accuracy: float
-    vehicle_image: str
-    license_plate_image: str
-    vehicle_id: str
+    type: Optional[str] = "entry"
+    date: Optional[datetime] = datetime.now()
+    prediction_accuracy: Optional[float]
+    vehicle_image: Optional[str]
+    license_plate_image: Optional[str]
+    vehicle_id: Optional[str]
 
     class Config:
         schemma_extra = {

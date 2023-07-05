@@ -4,12 +4,12 @@ _Version 0.0.1_
 
 ## Descripción
 
-* Base de datos: `MongoDB`
-* Nombre de la base de datos: `detector-api`
-* Colecciones:
-    * `registers`
-    * `cars`
-    * `logs`
+- Base de datos: `MongoDB`
+- Nombre de la base de datos: `detector-api`
+- Colecciones:
+  - `registers`
+  - `cars`
+  - `logs`
 
 ### Colección `registers`:
 
@@ -34,6 +34,3 @@ _Version 0.0.1_
   "is_blocked": "boolean"
 }
 ```
-
-
-
